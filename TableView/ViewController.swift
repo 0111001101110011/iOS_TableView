@@ -12,11 +12,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    let alumnos = ["Gabriel", "Ana Lourdes","Joel", "Trejo", "Eliud", "Jorge"]
+    var alumnos : [Alumno] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        alumnos.append(Alumno (nombre:"Gabriel", apellido:"Miranda",   matricula:"G01110"))
+        alumnos.append(Alumno (nombre:"Marco",   apellido:"Rodriguez", matricula:"G01111"))
+        alumnos.append(Alumno (nombre:"Ana",     apellido:"Cota",      matricula:"G01101"))
+        alumnos.append(Alumno (nombre:"Javier",  apellido:"Lopez",     matricula:"G01011"))
+        
+    
     }
     
     
@@ -31,13 +37,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //Contenido de cada celda
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = tableView.dequeueReusableCell(withIdentifier: "celdaAlumno")
-    
+        let celda = tableView.dequeueReusableCell(withIdentifier: "celdaAlumno") as? CeldaAlumnoController
         
+        celda?.lblNombre.text = alumnos[indexPath.row].nombre
+        celda?.lblApellido.text = alumnos[indexPath.row].apellido
+        celda?.lblMatricula.text = alumnos[indexPath.row].matricula
+        celda?.lblCorreo.text = alumnos[indexPath.row].correo
         
         return celda!
     }
-  
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if(alumnos[indexPath.row].correo != nil){
+            return 120
+        }
+        
+    }
+    
+}
     
 }
 

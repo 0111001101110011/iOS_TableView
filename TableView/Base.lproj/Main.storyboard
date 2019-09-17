@@ -22,27 +22,58 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaAlumno" rowHeight="49" id="VfG-xi-RvP">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="49"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdaAlumno" rowHeight="181" id="VfG-xi-RvP" customClass="CeldaAlumnoController" customModule="TableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="181"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VfG-xi-RvP" id="OQK-ig-PBb" customClass="CeldaAlumnoController" customModule="TableView" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="180.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sez-aA-hiG">
-                                                    <rect key="frame" x="20" y="14" width="61.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sez-aA-hiG">
+                                                    <rect key="frame" x="20" y="11" width="61.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Apellido" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXR-Fh-1V0">
+                                                    <rect key="frame" x="20" y="50" width="62" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Matricula" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maG-PL-3ZQ">
+                                                    <rect key="frame" x="20" y="88" width="71" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Correo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3W-gd-VdS">
+                                                    <rect key="frame" x="20" y="125" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="M3W-gd-VdS" firstAttribute="centerY" secondItem="OQK-ig-PBb" secondAttribute="centerY" id="G1l-7c-6Uf"/>
+                                                <constraint firstItem="maG-PL-3ZQ" firstAttribute="centerY" secondItem="OQK-ig-PBb" secondAttribute="centerY" id="VhF-Eo-VM3"/>
+                                                <constraint firstItem="XXR-Fh-1V0" firstAttribute="centerY" secondItem="OQK-ig-PBb" secondAttribute="centerY" id="XwP-R8-Itu"/>
                                                 <constraint firstItem="sez-aA-hiG" firstAttribute="leading" secondItem="OQK-ig-PBb" secondAttribute="leadingMargin" id="fKe-Hb-lnX"/>
                                                 <constraint firstItem="sez-aA-hiG" firstAttribute="centerY" secondItem="OQK-ig-PBb" secondAttribute="centerY" id="syi-R8-JdW"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblApellido" destination="XXR-Fh-1V0" id="nYd-4K-VP9"/>
+                                            <outlet property="lblCorreo" destination="M3W-gd-VdS" id="9mq-xK-P83"/>
+                                            <outlet property="lblMatricula" destination="maG-PL-3ZQ" id="aPl-Hg-2ni"/>
+                                            <outlet property="lblNombre" destination="M3W-gd-VdS" id="WOX-1g-xTg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="xy7-cc-LSg"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="YUv-v4-a3f"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
